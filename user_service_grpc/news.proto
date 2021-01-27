@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package user_service_grpc;
+
+service UserService {
+    rpc GetUserDetails(UserRequest) returns (UserReply){}
+}
+
+message UserRequest{
+    string user_id = 1;
+}
+message UserReply {
+  string user_id = 1;
+  repeated string tags = 2;
+}
